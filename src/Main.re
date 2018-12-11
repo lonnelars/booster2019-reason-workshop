@@ -7,6 +7,7 @@ let tests = [
   Records.tests,
   Variants.tests,
   Lists.tests,
+  Functions.tests,
 ];
 
 List.iter(f => f(), tests);
