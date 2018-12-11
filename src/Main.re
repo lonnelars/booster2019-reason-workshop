@@ -4,6 +4,7 @@ let tests = [
   LetBindings.tests,
   SimpleTypes.tests,
   Tuples.tests,
+  Records.tests,
 ];
 
 List.iter(f => f(), tests);
