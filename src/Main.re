@@ -5,6 +5,7 @@ let tests = [
   SimpleTypes.tests,
   Tuples.tests,
   Records.tests,
+  Variants.tests,
 ];
 
 List.iter(f => f(), tests);

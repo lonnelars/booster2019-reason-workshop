@@ -19,3 +19,5 @@ let __char__ = 'a';
 let __tuple__ = (0, "0");
 
 let __unit__ = ();
+
+let __option__ = Some(0);
