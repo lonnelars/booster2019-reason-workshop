@@ -1,4 +1,9 @@
-let tests = [Tutorial.tests, Basics.tests, LetBindings.tests];
+let tests = [
+  Tutorial.tests,
+  Basics.tests,
+  LetBindings.tests,
+  SimpleTypes.tests,
+];
 
 List.iter(f => f(), tests);
 
