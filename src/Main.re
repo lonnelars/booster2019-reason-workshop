@@ -1,4 +1,4 @@
-let tests = [Tutorial.tests];
+let tests = [Tutorial.tests, Basics.tests];
 
 List.iter(f => f(), tests);
 
