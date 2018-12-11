@@ -6,6 +6,7 @@ let tests = [
   Tuples.tests,
   Records.tests,
   Variants.tests,
+  Lists.tests,
 ];
 
 List.iter(f => f(), tests);

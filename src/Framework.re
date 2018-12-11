@@ -21,3 +21,7 @@ let __tuple__ = (0, "0");
 let __unit__ = ();
 
 let __option__ = Some(0);
+
+let __list__ = [];
+
+let __array__ = [||];
