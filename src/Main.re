@@ -8,6 +8,7 @@ let tests = [
   Variants.tests,
   Lists.tests,
   Functions.tests,
+  IfElse.tests,
 ];
 
 List.iter(f => f(), tests);
