@@ -16,6 +16,6 @@ let ___bool___ = true;
 
 let __char__ = 'a';
 
-let __tuple__ = (0, 0);
+let __tuple__ = (0, "0");
 
 let __unit__ = ();

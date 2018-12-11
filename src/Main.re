@@ -3,6 +3,7 @@ let tests = [
   Basics.tests,
   LetBindings.tests,
   SimpleTypes.tests,
+  Tuples.tests,
 ];
 
 List.iter(f => f(), tests);
