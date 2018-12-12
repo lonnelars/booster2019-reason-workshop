@@ -2,7 +2,7 @@ open Framework;
 
 let assertEqual = (a, b, message) => assertEquality("Lists", a, b, message);
 
-let tests = {
+let tests = () => {
   let list: list(int) = [1, 2, 3];
   assertEqual(list, __list__, "Lists are immutable, homogenous collections.");
   assertEqual(

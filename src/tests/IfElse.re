@@ -2,7 +2,7 @@ open Framework;
 
 let assertEqual = (a, b, message) => assertEquality("IfElse", a, b, message);
 
-let tests = {
+let tests = () => {
   let flag = true;
   let x = if (flag) {"turn feature on"} else {"turn feature off"};
   assertEqual(

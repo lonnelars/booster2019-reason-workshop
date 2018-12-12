@@ -12,6 +12,14 @@ let tests = () => {
     __string__,
     "A let binding can have an optional type annotation.",
   );
+  let message = "hello!";
+  /* message = "bye!" <-- Mutation is not allowed. */
+  let message = "bye!";
+  assertEquals(
+    message,
+    __string__,
+    "Bindings are immutable, but can be shadowed by a later binding with the same name.",
+  );
   {
     let city = "Trondheim";
     ();
@@ -20,14 +28,6 @@ let tests = () => {
     city,
     __string__,
     "Bindings can be scoped through {}. Bindings are not visible outside their scope.",
-  );
-  let message = "hello!";
-  /* message = "bye!" <-- Mutation is not allowed. */
-  let message = "bye!";
-  assertEquals(
-    message,
-    __string__,
-    "Bindings are immutable, but can be shadowed by a later binding with the same name.",
   );
   let greeting = {
     let salutation = "Hey ";

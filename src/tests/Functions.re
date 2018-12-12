@@ -7,7 +7,7 @@ type tree('a) =
   | Node('a, tree('a), tree('a))
   | Leaf('a);
 
-let tests = {
+let tests = () => {
   let greet = name => "Hello, " ++ name ++ "!";
   assertEqual(
     greet("TRD_Frontend"),
