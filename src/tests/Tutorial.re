@@ -1,10 +1,13 @@
 include Framework;
 
-let assertEqual = assertEquality("Tutorial");
+let assertEqual = (a, b, message) =>
+  assertEquality("Tutorial", a, b, message);
 
 /* The purpose of these tests is to teach you ReasonML while fixing tests and
    writing code. This first file is very simple, and its sole purpose is to
    demonstrate the testing framework.
+
+   Run `yarn install` first.
 
    Run the tests by opening a terminal and running `yarn start` from the project
    root. Open another terminal, and run `yarn watch-tests`. The tests will now
@@ -16,7 +19,7 @@ let assertEqual = assertEquality("Tutorial");
    Find this problem below, and repeat. When you are done with the problems in
    this file, move on to Basics.re. */
 
-let tests = () => {
-  assertEqual(true, __bool__, "true should be true");
-  assertEqual(false, ___bool___, "false should be false");
-};
+let tests = [
+  assertEqual(true, __bool__, "true should be true"),
+  assertEqual(false, ___bool___, "false should be false"),
+];

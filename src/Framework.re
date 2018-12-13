@@ -1,7 +1,13 @@
-let assertEquality = (path, expected, actual, message) =>
+type result =
+  | Ok
+  | Error(string);
+
+let assertEquality =
+    (path: string, expected: 'a, actual: 'a, message: string): result =>
   if (expected != actual) {
-    print_string("src/koans/" ++ path ++ ".re: " ++ message ++ "\n");
-    exit(0);
+    Error("src/koans/" ++ path ++ ".re: " ++ message ++ "\n");
+  } else {
+    Ok;
   };
 
 let __string__ = "";
