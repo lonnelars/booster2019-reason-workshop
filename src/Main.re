@@ -42,10 +42,11 @@ let nextTestMessage =
     results,
   );
 let progressBar =
-  "["
+  "\x1b[36m[\x1b[32m"
   ++ String.make(okCount, '=')
+  ++ "\x1b[36m"
   ++ String.make(resultCount - okCount, '.')
-  ++ "] "
+  ++ "]\x1b[0m  "
   ++ string_of_int(okCount)
   ++ "/"
   ++ string_of_int(resultCount);
