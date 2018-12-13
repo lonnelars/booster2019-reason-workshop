@@ -34,14 +34,14 @@ Vi skal hente data from fra GitHub api-et, og vise informasjon om din bruker i e
 
 Informasjon om en bruker får dere med
 
-```http
+```
 GET https://api.github.com/users/"$username"?access_token="$token"
 ```
 
 Et personlig token kan dere lage her:
 https://github.com/settings/tokens
 
-### bs-fetch
+### bs-fetch og bs-json
 
 Pakker for reason-prosjekter finner dere på https://redex.github.io/. Vi skal installere to pakker for å hente data, og dekode json.
 
