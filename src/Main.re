@@ -31,7 +31,7 @@ let isError = result =>
 
 let resultCount = count(results);
 let okCount = List.filter(isOk, results) |> count;
-let progressMessage =
+let nextTestMessage =
   List.fold_left(
     (message, result) =>
       switch (message, result) {
@@ -41,16 +41,19 @@ let progressMessage =
     "",
     results,
   );
-let progress =
-  string_of_int(okCount)
-  ++ " of "
-  ++ string_of_int(resultCount)
-  ++ " tests completed.";
+let progressBar =
+  "["
+  ++ String.make(okCount, '=')
+  ++ String.make(resultCount - okCount, '.')
+  ++ "] "
+  ++ string_of_int(okCount)
+  ++ "/"
+  ++ string_of_int(resultCount);
 
 if (okCount == resultCount) {
-  print_endline(progress);
+  print_endline(progressBar);
   print_endline("Well done!");
 } else {
-  print_endline(progress);
-  print_endline("Now have a look at " ++ progressMessage);
+  print_endline(progressBar);
+  print_endline("Now have a look at " ++ nextTestMessage);
 };
