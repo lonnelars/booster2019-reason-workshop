@@ -5,7 +5,7 @@ type result =
 let assertEquality =
     (path: string, expected: 'a, actual: 'a, message: string): result =>
   if (expected != actual) {
-    Error("src/koans/" ++ path ++ ".re: " ++ message ++ "\n");
+    Error("src/tests/" ++ path ++ ".re: " ++ message ++ "\n");
   } else {
     Ok;
   };
