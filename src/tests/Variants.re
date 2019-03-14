@@ -79,7 +79,7 @@ let tests = [
       | _ => 0
       },
       __int__,
-      "A variant's constructors can hold extra data. Access that data with the switch expression.",
+      "A variant's constructors can hold extra data. Access that data with pattern matching in the switch expression.",
     );
   },
   {
