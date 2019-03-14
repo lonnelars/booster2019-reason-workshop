@@ -41,14 +41,6 @@ let tests = [
       "Longer function bodies require curly braces.",
     );
   },
-  /* {
-       let printHello = () => print_string("hello");
-       assertEqual(
-         printHello(),
-         __unit__,
-         "Side-effect functions conventionally take unit as argument, and returns unit. unit has only one value: ().",
-       );
-     }, */
   assertEqual(
     sub(~x=10, ~y=7),
     __int__,
