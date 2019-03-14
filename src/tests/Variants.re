@@ -49,7 +49,7 @@ let tests = [
       | _ => ""
       },
       "Camilla",
-      "The compiler will warn us if we have not covered all possible options.",
+      "The compiler will warn us if we have not covered all possible options.\n\nOpen the terminal window where you have `yarn start` running, and notice the warning that says \"You forgot to handle a possible value here\". \n\nFix this and the next test by adding the missing values to the `manager` function on line 24.",
     );
   },
   assertEqual(
