@@ -8,6 +8,10 @@
 
 Velkommen! Denne workshopen skal lære dere [Reason](https://reasonml.github.io/), og vise dere hvordan dere kan starte med en enkel nettside skrevet i Reason og React.
 
+## Editor
+
+Vi trenger en editor-plugin for å jobbe effektivt med Reason. Prosjektet selv anbefaler VSCode. Se instrukser her: https://reasonml.github.io/docs/en/editor-plugins
+
 ## Lær språket
 
 Reason er designet for å ligne på JavaScript, men det er et helt eget språk, og mye oppførsel er helt annerledes i Reason enn i JavaScript. For eksempel er datastrukturene immutable, med mindre du eksplisitt ber om en mutable type.
