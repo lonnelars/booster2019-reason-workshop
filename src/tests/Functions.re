@@ -15,7 +15,7 @@ let tests = [
   {
     let greet = name => "Hello, " ++ name ++ "!";
     assertEqual(
-      greet("TRD_Frontend"),
+      greet("Booster"),
       __string__,
       "A function is declared with a fat arrow (=>), and returns the value of the expression to the right of the arrow.",
     );
