@@ -2,63 +2,63 @@
 
 ## tl;dr
 
-Åpne `src/tests/Tutorial.re`, og følg instruksjonene i kommentaren.
+Open `src/tests/Tutorial.re`, and follow the instructions in the comment. 
 
-## Velkommen
+## Welcome
 
-Velkommen! Denne workshopen skal lære dere [Reason](https://reasonml.github.io/), og vise dere hvordan dere kan starte med en enkel nettside skrevet i Reason og React.
+Welcome! This workshop will teach you [Reason](https://reasonml.github.io/), and show you how to create a simple webpage written with Reason and React. 
 
 ## Editor
 
-Vi trenger en editor-plugin for å jobbe effektivt med Reason. Prosjektet selv anbefaler VSCode. Se instrukser her: https://reasonml.github.io/docs/en/editor-plugins
+We'll need an editor plugin to work effectively with Reason. The project itself recommends VSCode. Follow the instructions here: https://reasonml.github.io/docs/en/editor-plugins
 
-## Lær språket
+## Learn the language
 
-Reason er designet for å ligne på JavaScript, men det er et helt eget språk, og mye oppførsel er helt annerledes i Reason enn i JavaScript. For eksempel er datastrukturene immutable, med mindre du eksplisitt ber om en mutable type.
+Reason is designed to look like JavaScript, but it is a completely different language, and some behaviour is radically different. As an example, all datastructures in Reason are immutable, unless you explicitly ask for a mutable type. 
 
-Mappa `src/tests` inneholder en mengde tester, som dere skal fikse. Tanken er å lære bort grunnelementene i språket, mens dere leser og skriver koden selv. Dette er den første delen av workshopen. I del to skal vi installere React, og prøve oss på å skrive en liten web applikasjon.
+The folder `src/tests` contains a set of tests, which you will fix. The idea is to teach the elements of the language, while you read and write code. This will be the first part of the workshop. In part two, we will install React, and try to write a small web application. 
 
-Begynn med å åpne `src/tests/Tutorial.re`, og følg instruksjonene i kommentaren.
+Start by opening `src/tests/Tutorial.re`, and follow the instructions in the comment. 
 
-## En liten web applikasjon
+## A small web application
 
-I denne andre delen av workshopen skal vi lage en liten webapplikasjon med Reason og React.
+In this second part of the workshop, we will make a small web application with Reason and React. 
 
-Begynn med å lage et nytt reason-react-prosjekt. Dokumentasjon finner dere her: https://reasonml.github.io/reason-react/docs/en/installation. Kort fortalt: `bsb -init my-react-app -theme react` og kjør `npm start` og `npm run webpack`.
+Start by making a new reason-react project. The documentation is here: https://reasonml.github.io/reason-react/docs/en/installation. It boils down to running `bsb -init my-react-app -theme react`, `npm start`, and `npm run webpack`. 
 
-jeg har antatt at React er rimelig kjent. Hvis det er helt fremmed, anbefaler jeg at du jobber sammen med en som kan React fra før.
+I have assumed that React is somewhat familiar. If it is not, I recommend you pair with someone who knows React. 
 
-### Oppgaven
+### The task
 
-Vi skal hente data from fra GitHub api-et, og vise informasjon om din bruker i en reactkomponent. Resultatet skal bli noe sånt som dette:
+We will fetch data from the GitHub API, and show information about your user in a react compnent. The result should be something like this:
 
 ![lonnelars on github.com](./github-user.png)
 
 ### API
 
-Informasjon om en bruker får dere med
+Information about a user is fetched like this:
 
 ```
 GET https://api.github.com/users/"$username"?access_token="$token"
 ```
 
-Et personlig token kan dere lage her:
+You can make a personal token here:
 https://github.com/settings/tokens
 
 ### bs-fetch og bs-json
 
-Pakker for reason-prosjekter finner dere på https://redex.github.io/. Vi skal installere to pakker for å hente data, og dekode json.
+Packages for Reason projects is found on https://redex.github.io/. We will install two packages, one for fetching data, and one for decoding json. 
 
 - https://redex.github.io/package/bs-fetch/.
 - https://redex.github.io/package/@glennsl/bs-json
 
-Installer dem med npm, og legg dem til i `bs-dependencies` i `bsconfig.json`.
+Install them with npm/yarn, and add the in `bs-dependencies` i `bsconfig.json`. Make sure you install `@glennsl/bs-json`, and not `bs-json`. The are not the same package.
 
-### Reducer components og stateless components
+### Reducer components and stateless components
 
-I Reason-React kan man lage to forskjellige komponenter: reducer components og stateless components.
+Reason-React has two types of components: reducer components, and stateless components. 
 
-_Stateless components_ er de enkleste, og burde være mest brukt i applikasjonene dere lager. De har ikke tilstand, som navnet tilsier. All data som skal brukes av disse komponentene, må sendes inn som props. En stateless component lages på denne måten:
+_Stateless components_ are the simplest, and should be the type of component you use the most. They have no state, and all data must be passed in as props. A stateless component is made like this:
 
 ```ocaml
 let component = ReasonReact.statelessComponent("Greeting");
@@ -69,9 +69,9 @@ let make = (~name, _children) => {
 };
 ```
 
-Se https://reasonml.github.io/reason-react/docs/en/creation-props-self for mer info om stateless components.
+See https://reasonml.github.io/reason-react/docs/en/creation-props-self for more information on stateless components. 
 
-_Reducer components_ kan ha en egen tilstand, og håndterer dette på samme måte som redux i react. Her er et eksempel på en enkel reducer component:
+_Reducer components_ have their own state, and handles this much the same way as redux. Here is an example of a simple reducer component:
 
 ```ocaml
 /* State declaration */
