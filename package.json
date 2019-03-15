@@ -5,7 +5,7 @@
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "watch-tests": "node src/Main.bs.js && chokidar src/**/*.bs.js -c 'node src/Main.bs.js' --silent",
+    "watch-tests": "node src/Main.bs.js && chokidar src/**/*.bs.js -c \"node src/Main.bs.js\" --silent",
     "docker:shell": "docker run -it --rm -v `pwd`:/reason-workshop -w /reason-workshop node:10 /bin/bash"
   },
   "keywords": [
